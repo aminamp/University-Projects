@@ -1,0 +1,35 @@
+/usr/local/apache-cassandra-2.0.5/bin/cqlsh csac0
+
+1)
+DROP KEYSPACE axa142831;
+
+2)
+CREATE KEYSPACE axa142831 WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+
+
+3) 
+USE axa142831;
+
+
+4)
+CREATE TABLE review_table(review_id VARCHAR, user_id VARCHAR, business_id VARCHAR, stars:FLOAT, PRIMARY KEY(business_id, stars));
+
+
+
+5)
+COPY review_table (review_id, user_id, business_id, stars) FROM 'review.csv' WITH DELIMITER = '^';	
+
+
+6)
+CREATE INDEX review_stars ON review_table (stars);
+
+6)
+select * from review_table where stars=4.0 LIMIT 10;
+
+
+7)
+truncate review_table;
+
+
+8) 
+drop table review_table;

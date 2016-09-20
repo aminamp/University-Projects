@@ -1,0 +1,11 @@
+
+Amin Amiripour , axa142831
+
+
+---------------------------------------------------
+Kernel		Average accuracy of 10 experiments 
+---------------------------------------------------
+Linear				78.35%
+Polynomial			72.55%
+Radial				75.71%
+Sigmoid				69.63%

@@ -1,0 +1,23 @@
+
+Amin Amiripour , axa142831
+
+
+
+Based on following result “Plasma glucose concentration” has the most correlation with Class value
+-------------------------------------------------------------------
+Attribute				Correlation with Class value 
+-------------------------------------------------------------------
+Number of times pregnant			0.2218982 
+Plasma glucose concentration			0.4665814	
+Diastolic blood pressure			0.06506836
+Triceps skin fold thickness 			0.07475223 
+2-Hour serum insulin 				0.130548 
+Body mass index					0.2926947 
+Diabetes pedigree function			0.1738441
+Age						0.238356 
+
+
+
+
+
+Comparing the correlation between all pairs of attributes, “Number of times pregnant” and “Age” have the highest mutual correlation 

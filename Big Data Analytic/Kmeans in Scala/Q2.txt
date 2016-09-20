@@ -1,0 +1,24 @@
+var movie = readLine("Enter movie id\n")
+var movieid = movie.toInt
+var data = sc.textFile("itemusermat")
+var mapped = data.map(line => line.split(" "))
+var intMap = mapped.map(x => x.map(_.toInt))
+import java.util.Arrays
+var kv = intMap.map(x => (x(0), Arrays.copyOfRange(x, 1,6041)))
+var means = kv.map(x=> (x._1,x._2.sum)).map(x=>(x._1,x._2/6040.0))
+var joined = kv.join(means)
+var newrow = joined.map(x => (x._1, x._2._1.toList.map(y=> y - x._2._2)))
+var xrow = newrow.filter(x=> x._1 == movieid).collect()(0)._2
+var mult = newrow.map(x=> (x._1, (for((a,b) <- x._2 zip xrow) yield a*b) sum))
+var rx = newrow.filter(x=> x._1 == movieid).mapValues(x => x.toList.map(y=>y*y)).collect()(0)._2.sum
+var sqrtrx = scala.math.sqrt(rx)
+var ry = newrow.mapValues(x => x.toList.map(y=>y*y)).map(y=> (y._1,y._2.sum)).mapValues(z => scala.math.sqrt(z)).mapValues(w => w*sqrtrx)
+var eqn = mult.join(ry)
+var res = eqn.mapValues(x=> x._1/x._2)
+var top5 = res.map{case(a,b) => (b,a)}.sortByKey(false).map{case(a,b) => (b,a)}.take(6).drop(1)
+var top5RDD = sc.parallelize(top5)
+var moviedata = sc.textFile("movies.dat")
+var moviesplit = moviedata.map(line=> line.split("::")).map(part => (part(0).toInt,(part(1),part(2))))
+var solution = top5RDD.leftOuterJoin(moviesplit) 
+var finalRDD = solution.map(x => (x._1, x._2._2))
+var finalAns = finalRDD.collect()

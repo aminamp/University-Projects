@@ -1,0 +1,31 @@
+/usr/local/apache-cassandra-2.0.5/bin/cqlsh csac0
+
+1)
+DROP KEYSPACE axa142831;
+
+2)
+CREATE KEYSPACE axa142831 WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+
+
+3) 
+USE axa142831;
+
+
+4)
+CREATE TABLE business_table(business_id VARCHAR, full_address VARCHAR, categories VARCHAR, PRIMARY KEY(business_id));
+
+
+5)
+COPY business_table (business_id, full_address, categories) FROM 'business.csv' WITH DELIMITER = '^';
+
+
+6)
+select * from business_table where business_id='HPWmjuivv3xJ279qSVfNaQ';
+
+
+7)
+truncate business_table;
+
+
+8) 
+drop table business_table;

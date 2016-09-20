@@ -1,0 +1,1 @@
+val addRess = readLine("Enter the address of business you looking for ") val inputFile = "hdfs://cshadoop1/yelpdatafall/business/business.csv" val inputData = sc.textFile(inputFile, 2).cache()inputData.map(line => line.split("\\^")).map(word => (word(0),word(1))).filter{case(key,value) => value.contains(addRess)}.map{case(key,value) => key}.collect.foreach(println)

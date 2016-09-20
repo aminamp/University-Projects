@@ -1,5 +1,5 @@
 CSCI531 - Homework 3
-Author : Amin Amiripour ( amiripou@usc.edu )
+Author : Amin Amiripour
 
 #############################################
 

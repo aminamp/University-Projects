@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+    <Placemark id="neighbor1">
+        <LineString>
+            <coordinates>
+-118.28535452,34.03041312
+-118.28789592,34.02389903
+            </coordinates>
+        </LineString>
+    </Placemark>
+    
+    <Placemark id="neighbor2">
+        <LineString>
+            <coordinates>
+-118.28535452,34.03041312
+-118.29140157,34.02534707
+            </coordinates>
+        </LineString>
+    </Placemark>
+
+    <Placemark id= "neighbor3">
+        <LineString>
+            <coordinates>
+-118.28535452,34.03041312
+-118.2802543,34.02183807
+            </coordinates>
+        </LineString>
+    </Placemark>
+
+<Style id="z1">
+<IconStyle><Icon><href>http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png</href></Icon></IconStyle>
+</Style>
+<Placemark><name>Vermon/Jeff</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.29140157,34.02534707</coordinates></Point>
+</Placemark>
+<Placemark><name>Vermon/Expo</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.29136401,34.01847072</coordinates></Point>
+</Placemark>
+<Placemark><name>Figueroa/Expo</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28239471,34.01843299</coordinates></Point>
+</Placemark>
+<Placemark><name>Figueroa/Jeff</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2802543,34.02183807</coordinates></Point>
+</Placemark>
+<Placemark><name>Tommy</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2854149,34.0205615</coordinates></Point>
+</Placemark>
+<Placemark><name>SAL</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28926116,34.01933532</coordinates></Point>
+</Placemark>
+<Placemark><name>Pool</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28789592,34.02389903</coordinates></Point>
+</Placemark>
+<Placemark><name>McQarthy</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28315377,34.02092932</coordinates></Point>
+</Placemark>
+<Placemark><name>MyHome</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28535452,34.03041312</coordinates></Point>
+</Placemark>
+</Document></kml>

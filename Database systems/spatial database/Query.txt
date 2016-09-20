@@ -1,0 +1,32 @@
+CSCI585 - Homework 2
+Author : Amin Amiripour ( amiripou@usc.edu )
+
+
+Step 4 - Part 1 Query: 
+SELECT ST_AsText(
+	ST_ConvexHull(	ST_Collect(
+	ST_GeomFromText(
+	'MULTIPOINT(
+	-118.29140157 34.02534707,
+ 	-118.29136401 34.01847072, 
+	-118.28239471 34.01843299, 
+	-118.2802543 34.02183807,
+	-118.2854149 34.0205615,
+	-118.28535452 34.03041312, 
+	-118.28926116 34.01933532, 
+	-118.28789592 34.02389903, 
+	-118.28315377 34.02092932)'
+				)			)
+		) 
+	);
+
+######################################################################
+
+Step 4 - Part 2 Query:create table myPoints( label varchar(20) );select AddGeometryColumn('myPoints’,’position’,4326,’POINT', 2); INSERT INTO myPoints (label, position) 
+VALUES ('Vermon/Jeff',ST_GeomFromText('Point(-118.29140157 34.02534707)',4326));INSERT INTO myPoints (label, position) VALUES ('Vermon/Expo',ST_GeomFromText('Point(-118.29136401 34.01847072)',4326));INSERT INTO myPoints (label, position) VALUES ('Figueroa/Expo',ST_GeomFromText('Point(-118.28239471 34.01843299)',4326));INSERT INTO myPoints (label, position) VALUES ('Figueroa/Jeff',ST_GeomFromText('Point(-118.2802543 34.02183807)',4326));INSERT INTO myPoints (label, position) 
+VALUES ('Tommy',ST_GeomFromText('Point(-118.2854149 34.0205615)',4326));INSERT INTO myPoints (label, position) VALUES ('SAL',ST_GeomFromText('Point(-118.28926116 34.01933532)',4326));INSERT INTO myPoints (label, position) VALUES ('Pool',ST_GeomFromText('Point(-118.28789592 34.02389903)',4326));
+
+INSERT INTO myPoints (label, position) VALUES ('McQarthy',ST_GeomFromText('Point(-118.28315377 34.02092932)',4326));
+
+
+SELECT *FROM myPointsORDER BY myPoints.position <-> ST_GeomFromText('Point(-118.28535452 34.03041312)',4326)LIMIT 3;
